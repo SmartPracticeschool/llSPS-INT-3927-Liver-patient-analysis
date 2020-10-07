@@ -21,12 +21,12 @@ def y_predict():
         x_test[0][1]=0
     else:
         x_test[0][1]=1
-    x_test=[[float(x) for x in x_test[0]]]
+    x_test=[[int(x) for x in x_test[0]]]
     prediction = model.predict(x_test)
     print(prediction)
     output=prediction[0]
     if output==1:
-        test="You are infected,please consult doctor!"
+        test="You are infected, please consult doctor!"
     else:
         test="You are fine!!"
     return render_template('index.html', prediction_text=test)
